@@ -1,13 +1,14 @@
+// return total number of book object
 function getTotalBooksCount(books) {
   const result = books.filter((book) => book)
   return result.length;
 }
-
+// return total number of accounts objects
 function getTotalAccountsCount(accounts) {
   const result = accounts.filter((account) => account);
   return result.length;
 }
-
+// returns total number of book that are borrowed
 function getBooksBorrowedCount(books) {
   const checkedOut = [];
   const result = books.forEach((book) => {
