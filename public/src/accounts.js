@@ -7,9 +7,7 @@ function sortAccountsByLastName(accounts) {
 };
 
 function getTotalNumberOfBorrows(account, books) {
-  const numOfBorrows = books.filter((book) => {
-    return book.borrows.some((bookId) => bookId.id === account.id);
-  })
+  const numOfBorrows = books.filter((book) => (book.borrows).some((bookId) => bookId.id === account.id))
   return numOfBorrows.length;
 }
 
