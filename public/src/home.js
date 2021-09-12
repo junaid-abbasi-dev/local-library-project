@@ -8,14 +8,21 @@ function getTotalAccountsCount(accounts) {
   const result = accounts.filter((account) => account);
   return result.length;
 }
-// returns total number of book that are borrowed
-function getBooksBorrowedCount(books) {
-  const checkedOut = [];
-  const result = books.forEach((book) => {
+
+// a helper function
+function borrowedBooks(book, checkedOut) {
+  book.forEach((book) => {
     if (book.borrows.find((item) => !item.returned)) {
       checkedOut.push(book);
     }
-  });
+  })
+}
+
+// returns total number of book that are borrowed
+function getBooksBorrowedCount(books) {
+  const checkedOut = [];
+  // a helper function
+  borrowedBooks(books, checkedOut);
   return checkedOut.length;
 }
 
